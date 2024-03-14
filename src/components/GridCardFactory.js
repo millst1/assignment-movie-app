@@ -13,7 +13,7 @@ function GridCardFactory() {
     var noCards = 7;
 
     for(var i = 0; i < noCards; i++) {
-        if (i == 3) {
+        if (i%3==0) {
             rows.push(cardsToRows(cards));
             cards = [];
         }
