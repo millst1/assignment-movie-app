@@ -1,14 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-//import GridCardFactory from 'GridCardFactory';
 import GridCardFactory from './GridCardFactory';
-import NavBar from './NavBar';
-import HeaderCarousel from './HeaderCarousel';
-import Navigation from './Navigation';
+import MovieSearch from './MovieSearch';
 
 function Home(){
 return (
   <div>
+    <MovieSearch />
     <GridCardFactory />
   </div>
 )};

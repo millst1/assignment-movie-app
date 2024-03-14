@@ -11,10 +11,10 @@ const SearchBar = ({onSearch}) => {
 
     return (
         <form onSubmit = {handleSubmit}>
-            <input type="text" autofocus="autofocus" value={searchTerm} />
+            <input type="text" autofocus="autofocus" value={searchQuery} />
             <button type="submit">Search</button>
         </form>
     )
-
-    export default SearchBar
 }
+
+export default SearchBar
