@@ -6,6 +6,7 @@ const SearchBar = ({onSearch}) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         setSearchQuery(event.target.value);
+        console.log("Searching for ", searchQuery);
         onSearch(searchQuery);
     }
 
