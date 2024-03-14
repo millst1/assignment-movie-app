@@ -9,10 +9,9 @@ import Navigation from './Navigation';
 function Home(){
 return (
   <div>
-    <HeaderCarousel />
     <GridCardFactory />
   </div>
-)};//<HeaderCarousel /><GridCard />
+)};
 
 
 export default Home;

@@ -16,10 +16,11 @@ function App() {
         <Route path="/" element={<Navigate to="/home" replace/>}></Route>
         <Route path="/home" element={<Home/>}></Route>
         <Route path="/about" element={<Aboutus/>}></Route>
-        <Route path="/universities" elements={<Universities/>}></Route>
       </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
+
+//<Route path="/universities" elements={<Universities/>}></Route>

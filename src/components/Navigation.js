@@ -13,7 +13,6 @@ function Navigation() {
           <Nav className="me-auto">
           <Link className='nav-link' to="/home">Home</Link>
           <Link className='nav-link' to="/about">About</Link>
-          <Link className='nav-link' to="/universities">Universities</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -22,3 +21,5 @@ function Navigation() {
 }
 
 export default Navigation;
+
+//<Link className='nav-link' to="/universities">Universities</Link>
