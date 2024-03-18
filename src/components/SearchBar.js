@@ -1,4 +1,5 @@
 import {useState} from "react"
+import { generate, count } from "random-words";
 
 const SearchBar = ({onSearch}) => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -14,7 +15,7 @@ const SearchBar = ({onSearch}) => {
     }
 
     const handleFeelingLucky = () => {
-        var randomWord = "";
+        var randomWord = generate();
         setSearchQuery(randomWord);
         onSearch(searchQuery);
     }
