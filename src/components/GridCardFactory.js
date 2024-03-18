@@ -7,20 +7,25 @@ function cardsToRows(cards) {
     </div>)
 }
 
-function GridCardFactory() {
+const GridCardFactory = ({movies}) => {
     var rows = [];
-    var cards = [];
-    var noCards = 7;
+    var currentRow = [];
+    var cards = movies.map((movie) => {
+        return <GridCard imageUrl={movie.Poster} title={movie.Title} year={movie.Year} />
+    }
+    );
 
-    for(var i = 0; i < noCards; i++) {
-        if (i%3==0) {
-            rows.push(cardsToRows(cards));
-            cards = [];
+    console.log(cards);
+
+    for(var i = 0; i < cards.length; i++) {
+        if (i%3==0 && currentRow.length != 0) {
+            rows.push(cardsToRows(currentRow));
+            currentRow = [];
         }
-        cards.push(<GridCard />);
+        currentRow.push(cards[i]);
     }
 
-    rows.push(cardsToRows(cards));
+    rows.push(cardsToRows(currentRow));
 
     return (
         <div className="container-fluid">

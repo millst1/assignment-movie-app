@@ -5,14 +5,17 @@ const SearchBar = ({onSearch}) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setSearchQuery(event.target.value);
         console.log("Searching for ", searchQuery);
         onSearch(searchQuery);
     }
 
+    const handleOnChange = (event) => {
+        setSearchQuery(event.target.value);
+    }
+
     return (
-        <form onSubmit = {handleSubmit}>
-            <input type="text" autofocus="autofocus" value={searchQuery} />
+        <form onSubmit={handleSubmit}>
+            <input type="text" autofocus="autofocus" value={searchQuery} onChange={handleOnChange} />
             <button type="submit">Search</button>
         </form>
     )
