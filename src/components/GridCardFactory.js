@@ -2,7 +2,7 @@ import GridCard from './GridCard';
 
 function cardsToRows(cards) {
     return (
-    <div className="row" class="d-flex justify-content-center">
+    <div class="row d-flex justify-content-center">
         {cards}
     </div>)
 }

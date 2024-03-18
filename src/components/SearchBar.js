@@ -13,10 +13,19 @@ const SearchBar = ({onSearch}) => {
         setSearchQuery(event.target.value);
     }
 
+    const handleFeelingLucky = () => {
+        var randomWord = "";
+        setSearchQuery(randomWord);
+        onSearch(searchQuery);
+    }
+
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="text" autofocus="autofocus" value={searchQuery} onChange={handleOnChange} />
-            <button type="submit">Search</button>
+        <form onSubmit={handleSubmit} class='d-flex align-items-center flex-column'>
+            <input type="text" class="input-group-text" autofocus="autofocus" value={searchQuery} onChange={handleOnChange} style={{ width: '36rem', margin: '8px'}}/>
+            <div class='row'>
+                <button type="submit" class="btn btn-primary" style={{ width: '8rem', margin: '8px'}}>Search</button>
+                <button onClick={handleFeelingLucky} class="btn btn-secondary" style={{ width: '8rem', margin: '8px'}}>Surprise me</button>
+            </div>
         </form>
     )
 }
