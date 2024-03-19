@@ -15,26 +15,30 @@ function MovieSearch() {
         setLoading(true);
         setErrorMessage("");
 
-        try {
-            const response = await axios.get(`https://www.omdbapi.com/?apikey=c0ef8255&s=${searchQuery}`);
-            console.log(response.data);
-
-            if (response.data.Response === "True") {
-                console.log("Request Success");
-                setMovieList(response.data.Search);
-                //console.log(movieList)
-            } else {
-                setErrorMessage(response.data.Error);
-                console.log("response.data.response !== True. See error message: ",errorMessage);
-            }
-
-        } catch (error) {
-            setErrorMessage(error);
-            console.log(error);
-        } finally {
+        if (searchQuery === "") {
             setLoading(false);
+        } else {
+            try {
+                const response = await axios.get(`https://www.omdbapi.com/?apikey=c0ef8255&s=${searchQuery}`);
+                console.log(response.data);
+
+                if (response.data.Response === "True") {
+                    console.log("Request Success");
+                    setMovieList(response.data.Search);
+                    //console.log(movieList)
+                } else {
+                    setErrorMessage(response.data.Error);
+                    console.log("response.data.response !== True. See error message: ",errorMessage);
+                }
+
+            } catch (error) {
+                setErrorMessage(error);
+                console.log(error);
+            } finally {
+                setLoading(false);
+            }
         }
-    }
+    } 
 
 
     return (

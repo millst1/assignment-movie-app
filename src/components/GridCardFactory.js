@@ -2,16 +2,23 @@ import GridCard from './GridCard';
 
 function cardsToRows(cards) {
     return (
-    <div class="row d-flex justify-content-center">
+    <div className="row d-flex justify-content-center">
+        {cards.map((card) => {
+            
+        })}
         {cards}
     </div>)
 }
 
 const GridCardFactory = ({movies}) => {
+    if (movies.length === 0) {
+        return (<div></div>)
+    }
+
     var rows = [];
     var currentRow = [];
     var cards = movies.map((movie) => {
-        return <GridCard imageUrl={movie.Poster} title={movie.Title} year={movie.Year} />
+        return <GridCard imageUrl={movie.Poster} title={movie.Title} year={movie.Year} key={movie.imdbID} />
     }
     );
 

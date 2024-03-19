@@ -10,14 +10,16 @@ import Home from './components/Home';
 
 function App() {
   return (
-    <BrowserRouter>
-    <Navigation />
-      <Routes>
-        <Route path="/" element={<Navigate to="/home" replace/>}></Route>
-        <Route path="/home" element={<Home/>}></Route>
-        <Route path="/about" element={<Aboutus/>}></Route>
-      </Routes>
-    </BrowserRouter>
+    <div style={{backgroundColor:'#D2E7E5'}}>
+      <BrowserRouter>
+      <Navigation />
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" replace/>}></Route>
+          <Route path="/home" element={<Home/>}></Route>
+          <Route path="/about" element={<Aboutus/>}></Route>
+        </Routes>
+      </BrowserRouter>
+      </div>
   );
 }
 

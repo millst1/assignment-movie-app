@@ -4,9 +4,7 @@ import MovieSearch from './MovieSearch';
 
 function Home(){
 return (
-  <div>
-    <MovieSearch />
-  </div>
+  <MovieSearch />
 )};
 
 
