@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import SearchBar from './SearchBar';
 import GridCardFactory from './GridCardFactory';
-
+import Spinner from './Spinner';
 
 function MovieSearch() {
 
@@ -45,7 +45,7 @@ function MovieSearch() {
         <div>
             <SearchBar onSearch={queryMovieAPI}/>
 
-            {loading && <p>Loading...</p>}
+            {loading && <Spinner/>}
             {errorMessage !== "" && <p>{errorMessage}</p>}
 
             <GridCardFactory movies={movieList} />
