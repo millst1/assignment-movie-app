@@ -18,11 +18,13 @@ function MovieSearch() {
         setErrorMessage("");
         setFailedQuery("");
 
+        const API_KEY=process.env.REACT_APP_MOVIE_API_KEY;
+
         if (searchQuery === "") {
             setLoading(false);
         } else {
             try {
-                const response = await axios.get(`https://www.omdbapi.com/?apikey=c0ef8255&s=${searchQuery}`);
+                const response = await axios.get(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchQuery}`);
                 console.log(response.data);
 
                 if (response.data.Response === "True") {
