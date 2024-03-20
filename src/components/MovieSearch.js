@@ -4,16 +4,19 @@ import axios from 'axios';
 import SearchBar from './SearchBar';
 import GridCardFactory from './GridCardFactory';
 import Spinner from './Spinner';
+import Alert from './Alert';
 
 function MovieSearch() {
 
     const [loading, setLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
     const [movieList, setMovieList] = useState([]);
+    const [failedQuery, setFailedQuery] = useState(""); 
 
     const queryMovieAPI = async(searchQuery) => {
         setLoading(true);
         setErrorMessage("");
+        setFailedQuery("");
 
         if (searchQuery === "") {
             setLoading(false);
@@ -28,6 +31,7 @@ function MovieSearch() {
                     //console.log(movieList)
                 } else {
                     setErrorMessage(response.data.Error);
+                    setFailedQuery(searchQuery);
                     console.log("response.data.response !== True. See error message: ",errorMessage);
                 }
 
@@ -46,7 +50,7 @@ function MovieSearch() {
             <SearchBar onSearch={queryMovieAPI}/>
 
             {loading && <Spinner/>}
-            {errorMessage !== "" && <p>{errorMessage}</p>}
+            {errorMessage !== "" && <Alert failedQuery={failedQuery} />}
 
             <GridCardFactory movies={movieList} />
         </div>
