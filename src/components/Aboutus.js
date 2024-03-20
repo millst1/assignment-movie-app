@@ -7,12 +7,11 @@ function Aboutus() {
     return (
         <div className="container">
             <Card style={{ width: '100%' }}>
-                <Card.Img variant="top" src="https://a.storyblok.com/f/191576/1200x800/215e59568f/round_profil_picture_after_.webp" />
                 <Card.Body>
-                    <Card.Title>My Profile</Card.Title>
+                    <Card.Title>Movie Project Assignment</Card.Title>
                     <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                       This website built in React using JavaScript, CSS and HTML is designed to pull data from an externally hosted service by providing a search term.
+                       The returned response is then provided to a factory that produces cards populated with the data and displayed in a grid.
                     </Card.Text>
                    
                 </Card.Body>
