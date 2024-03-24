@@ -6,7 +6,7 @@ import Navigation from './Navigation';
 function Aboutus() {
     return (
         <div className="container">
-            <Card style={{ width: '100%' }}>
+            <Card style={{ width: '100%', margin: '32px' }}>
                 <Card.Body>
                     <Card.Title>Movie Project Assignment</Card.Title>
                     <Card.Text>

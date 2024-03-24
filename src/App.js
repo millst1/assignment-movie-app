@@ -10,7 +10,7 @@ import Home from './components/Home';
 
 function App() {
   return (
-    <div style={{backgroundColor:'#D2E7E5'}}>
+    <div style={{backgroundColor:'#D2E7E5', height:'100vh'}}>
       <BrowserRouter>
       <Navigation />
         <Routes>

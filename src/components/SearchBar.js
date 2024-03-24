@@ -17,6 +17,7 @@ const SearchBar = ({onSearch}) => {
     const handleFeelingLucky = () => {
         var randomWord = generate();
         setSearchQuery(randomWord);
+        console.log("Searching for ", searchQuery);
         onSearch(searchQuery);
     }
 

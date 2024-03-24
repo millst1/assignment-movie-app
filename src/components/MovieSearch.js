@@ -30,7 +30,7 @@ function MovieSearch() {
                 if (response.data.Response === "True") {
                     console.log("Request Success");
                     setMovieList(response.data.Search);
-                    //console.log(movieList)
+                    console.log(movieList)
                 } else {
                     setErrorMessage(response.data.Error);
                     setFailedQuery(searchQuery);
@@ -53,7 +53,7 @@ function MovieSearch() {
             <SearchBar onSearch={queryMovieAPI}/>
 
             {loading && <Spinner/>}
-            {errorMessage !== "" && <Alert failedQuery={failedQuery} />}
+            {errorMessage != "" && <Alert failedQuery={failedQuery} />}
 
             <GridCardFactory movies={movieList} />
         </div>
