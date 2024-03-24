@@ -60,4 +60,4 @@ function MovieSearch() {
     );
 }
 
-export default MovieSearch;
+export default MovieSearch
