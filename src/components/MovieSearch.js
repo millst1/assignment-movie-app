@@ -49,11 +49,10 @@ function MovieSearch() {
 
     return (
         <div>
-            <h1></h1>
             <SearchBar onSearch={queryMovieAPI}/>
 
             {loading && <Spinner/>}
-            {errorMessage != "" && <Alert failedQuery={failedQuery} />}
+            {errorMessage !== "" && <Alert failedQuery={failedQuery} />}
 
             <GridCardFactory movies={movieList} />
         </div>

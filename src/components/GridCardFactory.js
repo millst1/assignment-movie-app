@@ -3,9 +3,6 @@ import GridCard from './GridCard';
 function cardsToRows(cards) {
     return (
     <div className="row d-flex justify-content-center">
-        {cards.map((card) => {
-            
-        })}
         {cards}
     </div>)
 }
@@ -25,7 +22,7 @@ const GridCardFactory = ({movies}) => {
     console.log(cards);
 
     for(var i = 0; i < cards.length; i++) {
-        if (i%3==0 && currentRow.length != 0) {
+        if (i%3===0 && currentRow.length !== 0) {
             rows.push(cardsToRows(currentRow));
             currentRow = [];
         }
@@ -35,7 +32,7 @@ const GridCardFactory = ({movies}) => {
     rows.push(cardsToRows(currentRow));
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid" style={{backgroundColor:'#D2E7E5', height:'100%'}}>
             {rows}
         </div>
     )

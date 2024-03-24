@@ -6,9 +6,9 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
-    <App />
- 
+    <div style={{backgroundColor:'#D2E7E5', height:'100vh'}}>
+        <App />
+    </div>
 );
 
 
